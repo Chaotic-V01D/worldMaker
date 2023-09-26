@@ -2,7 +2,7 @@ let global = {
     alpha: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
     vows: ["a", "e", "i", "o", "u", "y"],
     cons: ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"],
-    terrain: ["flat", "coastal", "mountainous", "wooded", "desert"],
+    terrain: ["flat", /*"coastal", */"mountainous", "wooded", "desert"],
     races: ["humans", "elves", "dwarves", "dragonborn", "orcs"],
     govTypes: ["democracy", "authoritarian", "monarchy", "oligarchy", "aristocracy", "autocracy", "anarchy", "confederacy", "fascist", "theocracy", "feudalist"],
     raceNames: [
@@ -26,6 +26,7 @@ let global = {
         {//orc names
         }
     ],
+    nationsList: [],
 }
 function genWorld(nations, scale) {
 
@@ -87,9 +88,9 @@ let Nation = function () {
         if (this.terrain == "wooded") {
             this.races.push("elves")//duh
         }
-        if (this.terrain == "coastal") {
+        /*if (this.terrain == "coastal") {
             this.races.push("humans")//idk, it makes sense right now (9/21/23, 10:02 PM)
-        }
+        }*/
         this.races = this.races.concat(global.races)
         for (let i = 0; i < this.population; i++) {
             let newCit = this.races[Math.floor(this.races.length * Math.random())]
