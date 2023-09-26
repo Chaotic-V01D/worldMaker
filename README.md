@@ -15,7 +15,6 @@ Each nation has the following traits:
 - Government type
 
 ## TODO
-- Remove 'coastal' from primary terrain types
 - Add human names gen
 - Add orc names gen
 - Implement relations generation system
