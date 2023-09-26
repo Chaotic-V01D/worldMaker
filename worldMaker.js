@@ -2,7 +2,7 @@ let global = {
     alpha: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
     vows: ["a", "e", "i", "o", "u", "y"],
     cons: ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"],
-    terrain: ["flat", /*"coastal", */"mountainous", "wooded", "desert"],
+    terrain: ["plains", /*"coastal", */"mountainous", "wooded", "desert", "tundra", "swamp", "steppe"],
     races: ["humans", "elves", "dwarves", "dragonborn", "orcs"],
     govTypes: ["democracy", "authoritarian", "monarchy", "oligarchy", "aristocracy", "autocracy", "anarchy", "confederacy", "fascist", "theocracy", "feudalist"],
     raceNames: [
