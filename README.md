@@ -5,6 +5,8 @@ For generating Forgotten-Realms-esque nations
 Each nation has the following traits:
 - Population
 - Populace
+- Races
+- Primary race
 - Primary terrain
 - Scale
 - Diplomacy level (controls relations with other nations)
