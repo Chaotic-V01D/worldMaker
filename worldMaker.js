@@ -7,6 +7,9 @@ let global = {
     govTypes: ["democracy", "authoritarian", "monarchy", "oligarchy", "aristocracy", "autocracy", "anarchy", "confederacy", "fascist", "theocracy", "feudalist"],
     raceNames: [
         {//human names
+            vowels: ["ea","i","a","oe"],
+            cons: ["n","c","m","ch","t","tt","nd"],
+            patterns: ["VCVCVCV", "CVCVCVC", "CVCVC", "VCVCV","CVC"]
         },
         {//elf names
             vowels: ["y", "ae", "ai", "ia", "au"],
@@ -24,6 +27,9 @@ let global = {
             patterns: ["CVCVC", "VCVCV"]
         },
         {//orc names
+            vowels: ["ele","e","o","i"],
+            cons: ["nch","ng","ll","nk","th","sk","rr","k","v"],
+            patterns: ["VCVCVCV", "CVCVCVC", "CVCVC", "VCVCV"]
         }
     ],
     nationsList: [],
@@ -135,7 +141,11 @@ let Nation = function () {
             this.name=generateName("elves")
         }else if(this.mainRace=="dragonborn"){
             this.name=generateName("dragonborn")
-        }else{
+        }else if(this.mainRace=="humans"){
+            this.name=generateName("humans")
+        } else if(this.mainRace=="orcs"){
+            this.name=generateName("orcs")
+        }{
             this.name="unmet player"
         }
 
