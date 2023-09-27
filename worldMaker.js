@@ -29,9 +29,14 @@ let global = {
     nationsList: [],
 }
 function genWorld(nations, scale) {
-
+    for(let i=0;i<nations;i++){
+        global.nationsList.push(new Nation());
+        global.nationsList[i].randNat();
+        global.nationsList[i].printNat();
+    }
 }
 let Nation = function () {
+    this.name;//String, the name of the nation
     this.terrain;//String, The predominant terrain of this nation
     this.races;//String arr, What races live in this nation
     this.populace;//String arr, The proportions of races living in this nation
@@ -47,7 +52,7 @@ let Nation = function () {
     this.exports;//String, name of the nations primary export
     this.relations;//int arr, the relation (0-4) that each nation has with each other nation
     this.govType;//String, the government type of the nation
-    this.defNat = function (terrain, races, populace, scale, population, diplomacyLevel, extPlanLevel, religion, exports, relations, govType) {
+    this.defNat = function (name, terrain, races, populace, scale, population, diplomacyLevel, extPlanLevel, religion, exports, relations, govType) {
         this.terrain = terrain;
         this.races = races;
         this.populace = populace;
@@ -124,6 +129,16 @@ let Nation = function () {
         Savvy?
         */
 
+        if(this.mainRace=="dwarves"){
+           this.name=generateName("dwarves")
+        }else if(this.mainRace=="elves"){
+            this.name=generateName("elves")
+        }else if(this.mainRace=="dragonborn"){
+            this.name=generateName("dragonborn")
+        }else{
+            this.name="unmet player"
+        }
+
         this.populace.sort();//dumb but it works
 
 
@@ -138,7 +153,7 @@ let Nation = function () {
 
     }
     this.printNat = function () {
-        console.log("This nation has " + this.population + " citizens: " + this.populace + ". The predominant race is " + this.mainRace + ". It's primary terrain is " + this.terrain + ".")
+        console.log("This nation is named " + this.name + ". This nation has " + this.population + " citizens: " + this.populace + ". The predominant race is " + this.mainRace + ". It's primary terrain is " + this.terrain + ".")
     }
 }
 let nethro = new Nation;
@@ -168,4 +183,5 @@ function generateName(race) {
         }
     }
     console.log(race + ": " + newName);
+    return(newName);
 }
