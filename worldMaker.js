@@ -2,7 +2,7 @@ let global = {
     alpha: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
     vows: ["a", "e", "i", "o", "u", "y"],
     cons: ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"],
-    terrain: ["plains", /*"coastal", */"mountainous", "wooded", "desert", "tundra", "swamp", "steppe"],
+        terrain: ["plains", /*"coastal", */"mountainous", "wooded", "desert", "tundra", "swamp", "steppe"],
     races: ["humans", "elves", "dwarves", "dragonborn", "orcs"],
     govTypes: ["democracy", "authoritarian", "monarchy", "oligarchy", "aristocracy", "autocracy", "anarchy", "confederacy", "fascist", "theocracy", "feudalist"],
     raceNames: [
@@ -134,7 +134,6 @@ let Nation = function () {
         In the case of a tie, the one that comes latest in the array becomes bigPop
         Savvy?
         */
-
         if(this.mainRace=="dwarves"){
            this.name=generateName("dwarves")
         }else if(this.mainRace=="elves"){
@@ -145,7 +144,7 @@ let Nation = function () {
             this.name=generateName("humans")
         } else if(this.mainRace=="orcs"){
             this.name=generateName("orcs")
-        }{
+        }else{
             this.name="unmet player"
         }
 
@@ -169,7 +168,7 @@ let Nation = function () {
 let nethro = new Nation;
 nethro.randNat()
 nethro.printNat();
-generateName("dwarves")
+//generateName("dwarves")
 function generateName(race) {
     let newName = "";
     let raceIndex = global.races.indexOf(race)//Finds where in the race-list the given race can be found
@@ -192,6 +191,6 @@ function generateName(race) {
             }
         }
     }
-    console.log(race + ": " + newName);
+    //console.log(race + ": " + newName);
     return(newName);
 }
